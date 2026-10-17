@@ -1,0 +1,13 @@
+diff --git a/codex-rs/sandboxing/src/seatbelt.rs b/codex-rs/sandboxing/src/seatbelt.rs
+index 0f8701a..c314834 100644
+--- a/codex-rs/sandboxing/src/seatbelt.rs
++++ b/codex-rs/sandboxing/src/seatbelt.rs
+@@ -1079,7 +1079,7 @@ pub(crate) fn create_seatbelt_command_args_with_profile(
+     // file-write* and file-ioctl. Even deny-default needs this explicit deny.
+     // F_MAKECOMPRESSED = 80, F_TRANSFEREXTENTS = 110.
+     if !file_system_sandbox_policy.has_full_disk_write_access() {
+-        policy_sections.push("(deny system-fcntl (fcntl-command 80 110))".to_string());
++        // macOS 10.15 Catalina: system-fcntl SBPL operation not available, skip this deny
+     }
+ 
+     let full_policy = policy_sections.join("\n");

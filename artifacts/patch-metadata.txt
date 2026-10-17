@@ -1,0 +1,9 @@
+repository=https://github.com/openai/codex.git
+commit=3b8f43a06bb3105e81406b35ff69f94977d18ae4
+function_symbol=__ZN16codex_sandboxing8seatbelt28create_seatbelt_command_args17h953e56130c8b0c08E
+function_vmaddr=0x1099760c0
+patch_vmaddr=0x10997a377
+patch_file_offset=0x997a377
+patch_file_offset_decimal=160932727
+original_bytes=0f 85 8e 00 00 00
+patched_bytes=e9 8f 00 00 00 90
